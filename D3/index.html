@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+ <head>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+<!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+  <title>D3 Example #1</title>
+ </head>
+<body>
+
+<script>
+$(document).ready(function(){
+  $("body").html("<div class=\"row\"><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div></div><div class=\"row\"><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div></div><div class=\"row\"><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div></div><div class=\"row\"><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div><div class=\"col-xs cell1\">test</div></div>");
+
+  d3.selectAll("div").style("background-color", function(d, i) {
+    var rand1 = Math.random(255);
+    var rand2 = Math.random(255);
+    var rand3 = Math.random(255);
+
+    return i % 2 ? "rgb(rand1,rand2,rand3)" : "#eee";
+
+//test function
+  function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+console.log(makeid());
+  });
+});
+</script>
+
+ </body>
+</html>
